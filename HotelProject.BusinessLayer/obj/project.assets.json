@@ -782,6 +782,35 @@
             "rid": "win"
           }
         }
+      },
+      "HotelProject.DataAccessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "HotelProject.EntityLayer": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.23",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.23"
+        },
+        "compile": {
+          "bin/placeholder/HotelProject.DataAccessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelProject.DataAccessLayer.dll": {}
+        }
+      },
+      "HotelProject.EntityLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.23",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.23"
+        },
+        "compile": {
+          "bin/placeholder/HotelProject.EntityLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelProject.EntityLayer.dll": {}
+        }
       }
     }
   },
@@ -2003,10 +2032,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "HotelProject.DataAccessLayer/1.0.0": {
+      "type": "project",
+      "path": "../HotelProject.DataAccessLayer/HotelProject.DataAccessLayer.csproj",
+      "msbuildProject": "../HotelProject.DataAccessLayer/HotelProject.DataAccessLayer.csproj"
+    },
+    "HotelProject.EntityLayer/1.0.0": {
+      "type": "project",
+      "path": "../HotelProject.EntityLayer/HotelProject.EntityLayer.csproj",
+      "msbuildProject": "../HotelProject.EntityLayer/HotelProject.EntityLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "HotelProject.DataAccessLayer >= 1.0.0",
+      "HotelProject.EntityLayer >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.23",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.23",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.23",
@@ -2039,7 +2080,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Hakan\\OneDrive - Tora\\Documents\\Visual Studio 2022\\asp-net-core\\Core_Proje2Api\\HotelProject.DataAccessLayer\\HotelProject.DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\Hakan\\OneDrive - Tora\\Documents\\Visual Studio 2022\\asp-net-core\\Core_Proje2Api\\HotelProject.DataAccessLayer\\HotelProject.DataAccessLayer.csproj"
+            },
+            "C:\\Users\\Hakan\\OneDrive - Tora\\Documents\\Visual Studio 2022\\asp-net-core\\Core_Proje2Api\\HotelProject.EntityLayer\\HotelProject.EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\Hakan\\OneDrive - Tora\\Documents\\Visual Studio 2022\\asp-net-core\\Core_Proje2Api\\HotelProject.EntityLayer\\HotelProject.EntityLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
