@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "CVR//JH2KWhd5XobLgGssigbbZZIb2t6JFfM1OklIzk3CAlVwLSM7UY33CDYUCBz6mPq4F77FquecNHQteZJ5g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Hakan\\OneDrive - Tora\\Documents\\Visual Studio 2022\\asp-net-core\\Core_Proje2Api\\HotelProject.WebApi\\HotelProject.WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hakan\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
