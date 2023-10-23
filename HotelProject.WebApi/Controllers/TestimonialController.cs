@@ -39,7 +39,7 @@ namespace HotelProject.WebApi.Controllers
             _testimonialDal.Update(testimonial);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult TestimonialDelete(int id)
         {
             _testimonialDal.Delete(_testimonialDal.GetByID(id));
