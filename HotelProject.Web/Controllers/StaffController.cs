@@ -16,6 +16,7 @@ namespace HotelProject.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
+
             var responseMessage = await client.GetAsync("https://localhost:7113/api/Staff");
             if(responseMessage.IsSuccessStatusCode)
             {

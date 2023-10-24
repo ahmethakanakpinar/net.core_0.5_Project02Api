@@ -1,8 +1,52 @@
-﻿
+﻿@model List<StaffViewModel>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_AdminLayout/_AdminLayout.cshtml";
 }
-
-<h1>Index</h1>
-
+<div class="row">
+    <div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Responsive Table</h4>
+            <div class="table-responsive">
+                <table class="table header-border">
+                    <thead>
+                        <tr>
+                            <th>Resim</th>
+                            <th>Adı</th>
+                            <th>Görevi</th>
+                            <th>Facebook</th>
+                            <th>Instagram</th>
+                            <th>X</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                <img class="rounded-circle" src="~/adminweb/images/avatar/1.jpg" alt="">
+                            </td>
+                            <td>@item.Name</td>
+                            <td>
+                                <span class="text-muted">@item.Title</span>
+                            </td>
+                            <td>
+                                <span class="label gradient-4 rounded">@item.SocialMedia1</span>
+                            </td>
+                            <td>
+                                <span class="label gradient-5 rounded">@item.SocialMedia2</span>
+                            </td>
+                            <td>
+                                <span class="label rounded">@item.SocialMedia3</span>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="#" class="btn btn-info">Yeni Personel Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
