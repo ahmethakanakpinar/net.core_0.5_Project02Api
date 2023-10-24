@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "AddStaff";
+    Layout = "~/Views/_AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-validation">
+                    <form class="form-valide" method="post">
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="Name">
+                                Ad Soyad <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="Name" name="Name" placeholder="Adınızı Soyadınızı Giriniz">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="Title">
+                                Görevi <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="Title" name="Title" placeholder="Göreviniz">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="SocialMedia1">
+                                Facebook Adresi <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="SocialMedia1" name="SocialMedia1" placeholder="Facebook Adresiniz">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="SocialMedia2">
+                                Instagram Adresi <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="SocialMedia2" name="SocialMedia2" placeholder="Instagram Adresiniz">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="SocialMedia3">
+                                X Adresi <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="SocialMedia3" name="SocialMedia3" placeholder="X Adresiniz">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="ImageUrl">
+                                Image Url <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" placeholder="Image Url">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-8 ml-auto">
+                                <button type="submit" class="btn btn-primary">Gönder</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ExtraScripts {
+    <script src="~/adminweb/plugins/validation/jquery.validate.min.js"></script>
+    <script src="~/adminweb/plugins/validation/jquery.validate-init.js"></script>
+}
+
