@@ -147,7 +147,7 @@
             },
             "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
-              "version": "[7.0.13, )"
+              "version": "[6.0.23, )"
             }
           },
           "imports": [
