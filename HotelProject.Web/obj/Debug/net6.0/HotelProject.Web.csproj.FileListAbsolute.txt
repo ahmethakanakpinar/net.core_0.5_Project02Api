@@ -247,3 +247,7 @@ C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Pr
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\HotelProject.EntityLayer.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\HotelProject.EntityLayer.pdb

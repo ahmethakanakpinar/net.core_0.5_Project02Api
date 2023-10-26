@@ -13,7 +13,7 @@ namespace HotelProject.Web
             // Add services to the container.
             builder.Services.AddHttpClient();
             builder.Services.AddControllersWithViews();
-            System.Net.ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true;
+            builder.Services.AddAutoMapper(typeof(Program));
 
  
 
