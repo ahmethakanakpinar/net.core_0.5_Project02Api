@@ -26,5 +26,10 @@ namespace HotelProject.Web.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public IActionResult AddService()
+        {
+            return View();
+        }
     }
 }
