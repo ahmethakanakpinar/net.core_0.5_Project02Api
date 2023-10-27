@@ -15,7 +15,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="~/adminweb/assets/images/favicon.png">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="~/adminweb/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -46,9 +46,9 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="index.html"> <h4>Giriş</h4></a>
+                                <a class="text-center" href="/Login/Index"> <h4>Giriş</h4></a>
 
-                                <form class="mt-5 mb-5 login-input">
+                                <form class="mt-5 mb-5 login-input" method="post">
                                     <div class="form-group">
                                         <input type="text" asp-for="UserName" class="form-control" placeholder="Kullanıcı Adı">
                                     </div>
@@ -57,7 +57,7 @@
                                     </div>
                                     <button class="btn login-form__btn submit w-100">Giriş Yap</button>
                                 </form>
-                                <p class="mt-5 login-form__footer">Hesabınız Yok mu ? <a href="page-register.html" class="text-primary">Hemen Hesap oluştur</a></p>
+                                <p class="mt-5 login-form__footer">Hesabınız Yok mu ? <a href="/Register/Index" class="text-primary">Hemen Hesap oluştur</a></p>
                             </div>
                         </div>
                     </div>
