@@ -20,7 +20,7 @@ namespace HotelProject.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(CreateRegisterDto createRegisterDto)
+        public async Task<IActionResult> Index(RegisterUserDto registerUserDto)
         {
             if(!ModelState.IsValid)
             {
@@ -28,12 +28,12 @@ namespace HotelProject.Web.Controllers
             }
             var appUser = new AppUser()
             {
-                UserName = createRegisterDto.UserName,
-                Name = createRegisterDto.Name,
-                Surname = createRegisterDto.Surname,
-                Email = createRegisterDto.Email,
+                UserName = registerUserDto.UserName,
+                Name = registerUserDto.Name,
+                Surname = registerUserDto.Surname,
+                Email = registerUserDto.Email,
             };
-            var result = await _userManager.CreateAsync(appUser, createRegisterDto.PasswordHash);
+            var result = await _userManager.CreateAsync(appUser, registerUserDto.PasswordHash);
             if(result.Succeeded)
             {
                 return RedirectToAction("Index", "Login");

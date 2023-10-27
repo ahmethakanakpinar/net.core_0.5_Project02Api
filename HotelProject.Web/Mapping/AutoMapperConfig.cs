@@ -12,7 +12,7 @@ namespace HotelProject.Web.Mapping
             CreateMap<ResultServiceDto, Service>().ReverseMap();
             CreateMap<CreateServiceDto, Service>().ReverseMap();
             CreateMap<UpdateServiceDto, Service>().ReverseMap();
-            CreateMap<CreateRegisterDto, AppUser>().ReverseMap();
+            CreateMap<RegisterUserDto, AppUser>().ReverseMap();
         }
     }
 }

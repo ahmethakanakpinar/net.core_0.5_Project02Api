@@ -2,7 +2,7 @@
 
 namespace HotelProject.Web.Dtos.RegisterDto
 {
-    public class CreateRegisterDto 
+    public class RegisterUserDto 
     {
         [Required(ErrorMessage = "Kullanıcı Adı Boş Geçilemez!")]
         public string UserName { get; set; }
