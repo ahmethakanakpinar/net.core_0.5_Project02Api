@@ -12,5 +12,13 @@ namespace HotelProject.Web.Controllers
         {
            return PartialView();
         }
+        public PartialViewResult NavPartial() 
+        {
+            return PartialView();
+        }
+        public PartialViewResult FooterPartial() 
+        {
+            return PartialView();
+        }
     }
 }
