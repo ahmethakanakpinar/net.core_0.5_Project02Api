@@ -10,6 +10,7 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "HotelProject.BusinessLayer": "1.0.0",
           "HotelProject.DataAccessLayer": "1.0.0",
           "HotelProject.EntityLayer": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23",
@@ -2558,6 +2559,17 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "HotelProject.BusinessLayer/1.0.0": {
+        "dependencies": {
+          "HotelProject.DataAccessLayer": "1.0.0",
+          "HotelProject.EntityLayer": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.23",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.23"
+        },
+        "runtime": {
+          "HotelProject.BusinessLayer.dll": {}
+        }
+      },
       "HotelProject.DataAccessLayer/1.0.0": {
         "dependencies": {
           "HotelProject.EntityLayer": "1.0.0",
@@ -4142,6 +4154,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "HotelProject.BusinessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "HotelProject.DataAccessLayer/1.0.0": {
       "type": "project",

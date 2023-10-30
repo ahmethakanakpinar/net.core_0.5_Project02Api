@@ -1,7 +1,8 @@
 ﻿namespace HotelProject.Web.Dtos.AboutDto
 {
-    public class ResultAboutDto
+    public class UpdateAboutDto
     {
+        public int AboutID { get; set; }
         public string Title { get; set; }
         public string Title2 { get; set; }
         public string Description { get; set; }

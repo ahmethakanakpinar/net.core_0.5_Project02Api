@@ -258,3 +258,5 @@ C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Pr
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\HotelProject.DataAccessLayer.dll
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\HotelProject.DataAccessLayer.pdb
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\HotelProject.BusinessLayer.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\HotelProject.BusinessLayer.pdb

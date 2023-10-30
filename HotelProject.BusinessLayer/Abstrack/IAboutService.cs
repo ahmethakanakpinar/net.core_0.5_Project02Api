@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Abstrack
 {
+    
     public interface IAboutService : IGenericService<About>
     {
     }

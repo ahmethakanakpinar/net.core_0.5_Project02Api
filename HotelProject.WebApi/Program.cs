@@ -3,6 +3,7 @@ using HotelProject.BusinessLayer.Concrete;
 using HotelProject.DataAccessLayer.Abstrack;
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.EntityFramework;
+using HotelProject.EntityLayer;
 using Microsoft.AspNetCore.Builder;
 
 namespace HotelProject.WebApi
@@ -30,6 +31,9 @@ namespace HotelProject.WebApi
 
             builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
             builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+
+            builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+            builder.Services.AddScoped<IAboutService, AboutManager>();
 
             builder.Services.AddCors(opt =>
             {
