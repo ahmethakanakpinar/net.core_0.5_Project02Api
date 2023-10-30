@@ -3,6 +3,7 @@ using HotelProject.EntityLayer;
 using HotelProject.Web.Dtos.AboutDto;
 using HotelProject.Web.Dtos.LoginDto;
 using HotelProject.Web.Dtos.RegisterDto;
+using HotelProject.Web.Dtos.RoomDto;
 using HotelProject.Web.Dtos.ServiceDto;
 
 namespace HotelProject.Web.Mapping
@@ -18,6 +19,7 @@ namespace HotelProject.Web.Mapping
             CreateMap<LoginUserDto, AppUser>().ReverseMap();
             CreateMap<ResultAboutDto, About>().ReverseMap();
             CreateMap<UpdateAboutDto, About>().ReverseMap();
+            CreateMap<ResultRoomDto, Room>().ReverseMap();
         }
     }
 }
