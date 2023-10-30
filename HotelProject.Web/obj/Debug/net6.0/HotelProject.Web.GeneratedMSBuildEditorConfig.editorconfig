@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Hakan/OneDrive - Tora/Documents/Visual Studio 2022/asp-net-core/Core_Proje2Api/HotelProject.Web/Views/Default/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hakan/OneDrive - Tora/Documents/Visual Studio 2022/asp-net-core/Core_Proje2Api/HotelProject.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Hakan/OneDrive - Tora/Documents/Visual Studio 2022/asp-net-core/Core_Proje2Api/HotelProject.Web/Views/_AdminLayout/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX0FkbWluTGF5b3V0XF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hakan/OneDrive - Tora/Documents/Visual Studio 2022/asp-net-core/Core_Proje2Api/HotelProject.Web/Views/_Layout/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX0xheW91dFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Hakan/OneDrive - Tora/Documents/Visual Studio 2022/asp-net-core/Core_Proje2Api/HotelProject.Web/Views/_ViewImports.cshtml]
