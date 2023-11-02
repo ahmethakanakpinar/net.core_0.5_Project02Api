@@ -54,6 +54,14 @@ namespace HotelProject.Web
                 name: "default",
                 pattern: "{controller=Default}/{action=Index}/{id?}");
 
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Deneme}/{action=Index}/{id?}"
+                );
+            });
+
             app.Run();
 
         }
