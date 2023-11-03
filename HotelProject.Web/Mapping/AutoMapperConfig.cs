@@ -26,6 +26,8 @@ namespace HotelProject.Web.Mapping
             CreateMap<ResultRoomDto, Room>().ReverseMap();
             CreateMap<ResultTestimonialDto, Testimonial>().ReverseMap();
             CreateMap<ResultStaffDto, Staff>().ReverseMap();
+            CreateMap<CreateStaffDto, Staff>().ReverseMap();
+            CreateMap<UpdateStaffDto, Staff>().ReverseMap();
             CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
             CreateMap<ResultBookingDto, Booking>().ReverseMap();
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
