@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Hakan/OneDrive - Tora/Documents/Visual Studio 2022/asp-net-core/Core_Proje2Api/HotelProject.Web/Areas/Admin/Views/Booking/AddBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xBZGRCb29raW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hakan/OneDrive - Tora/Documents/Visual Studio 2022/asp-net-core/Core_Proje2Api/HotelProject.Web/Areas/Admin/Views/Booking/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
