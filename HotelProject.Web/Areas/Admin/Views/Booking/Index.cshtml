@@ -34,14 +34,14 @@
                                 var bargeclass = "";
                                 if (item.Status == "Onay Bekleniyor")
                                 {
-                                    link = "#";
+                                    link = "/Admin/Booking/ApproveBooking/"+ item.BookingID;
                                     buttonclass = "success";
                                     bargeclass = "warning";
                                     metin = "Onayla";
                                 }
                                 else if (item.Status == "Onaylandı")
                                 {
-                                    link = "#";
+                                    link = "/Admin/Booking/ApproveBooking/" + item.BookingID;
                                     buttonclass = "warning";
                                     bargeclass = "success";
                                     metin = "Beklet";
@@ -58,7 +58,9 @@
                                       
                                     </td>
                                     <td>
-                                        <a href="@link" class="btn btn-outline-@buttonclass">@metin</a>
+                                        <form asp-action="ApproveBooking" asp-controller="Booking" method="post">
+                                            <a href="@link" class="btn btn-outline-@buttonclass">@metin</a>
+                                        </form>
                                         <a href="#" class="btn btn-outline-primary">Detaylar</a>
                                         <a href="/Admin/Booking/DeleteBooking/@item.BookingID" class="btn mb-1 btn-rounded btn-danger">Sil</a>
                                         <a href="/Admin/Booking/UpdateBooking/@item.BookingID" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>

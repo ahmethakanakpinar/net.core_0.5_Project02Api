@@ -1,6 +1,9 @@
-﻿using HotelProject.Web.Dtos.BookingDto;
+﻿using AutoMapper;
+using HotelProject.BusinessLayer.Abstrack;
+using HotelProject.Web.Dtos.BookingDto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net.Http;
 using System.Text;
 
 namespace HotelProject.Web.Areas.Admin.Controllers
@@ -10,6 +13,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
     public class BookingController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
+
         public BookingController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
@@ -84,5 +88,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             }
             return View();
         }
+     
     }
 }
+
