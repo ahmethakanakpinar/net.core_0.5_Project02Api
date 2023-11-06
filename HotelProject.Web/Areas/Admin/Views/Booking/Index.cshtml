@@ -1,8 +1,74 @@
-﻿
+﻿@model List<ResultBookingDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+
 }
 
-<h1>Index</h1>
-
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Rezervasyon</h4>
+                <div class="table-responsive">
+                    <table class="table header-border">
+                        <thead>
+                            <tr>
+                                <th>Müşteri</th>
+                                <th>Mail</th>
+                                <th>Giriş Tarihi</th>
+                                <th>Çıkış Tarihi</th>
+                                <th>Oda Sayısı</th>
+                                <th>Özel İstekler</th>
+                                <th>Durum</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                string result = (item.SpecialRequest != null) ? (item.SpecialRequest.Substring(0, Math.Min(item.SpecialRequest.Length, 50))) : "Yok";
+                                var link = "";
+                                var buttonclass = "";
+                                var metin = "";
+                                var bargeclass = "";
+                                if (item.Status == "Onay Bekleniyor")
+                                {
+                                    link = "#";
+                                    buttonclass = "success";
+                                    bargeclass = "warning";
+                                    metin = "Onayla";
+                                }
+                                else if (item.Status == "Onaylandı")
+                                {
+                                    link = "#";
+                                    buttonclass = "warning";
+                                    bargeclass = "success";
+                                    metin = "Beklet";
+                                }
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Mail</td>
+                                    <td>@item.Checkin.Date.ToString("dd.MM.yyyy")</td>
+                                    <td>@item.Checkout.Date.ToString("dd.MM.yyyy")</td>
+                                    <td>@item.RoomCount</td>
+                                    <td>@result</td>
+                                    <td>
+                                        <span class="badge badge-@bargeclass px-2 color-white p-2">@item.Status</span>
+                                      
+                                    </td>
+                                    <td>
+                                        <a href="@link" class="btn btn-outline-@buttonclass">@metin</a>
+                                        <a href="#" class="btn btn-outline-primary">Detaylar</a>
+                                        <a href="/Admin/Booking/DeleteBooking/@item.BookingID" class="btn mb-1 btn-rounded btn-danger">Sil</a>
+                                        <a href="/Admin/Booking/UpdateBooking/@item.BookingID" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

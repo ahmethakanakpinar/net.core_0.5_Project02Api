@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 
 namespace HotelProject.Web.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Route("Admin/[controller]/[action]/{id?}")]
     public class BookingController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
