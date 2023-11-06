@@ -1,0 +1,52 @@
+﻿@model List<ResultServiceDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hizmetler</h4>
+                <div class="table-responsive">
+                    <table class="table header-border">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Hizmet İkonu</th>
+                                <th>Hizmet Başlığı</th>
+                                <th>Hizmet Açıklaması</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+                                            <i class="fa @item.ServiceIcon fa-2x text-primary"></i>
+                                        </div>
+                                    </td>
+                                    <td>@item.Title</td>
+                                    <td>
+                                        <span class="text-muted">@item.Description.Substring(0, Math.Min(item.Description.Length, 50))...</span>
+                                    </td>
+                                    <td>
+                                        <a href="/Admin/Service/DeleteService/@item.ServiceID" class="btn mb-1 btn-rounded btn-danger">Sil</a>
+                                        <a href="/Admin/Service/UpdateService/@item.ServiceID" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a href="/Admin/Service/AddService/" class="btn btn-info">Yeni Hizmet Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section ExtraScripts {
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+}
