@@ -1,6 +1,7 @@
 ﻿using HotelProject.Web.Dtos.BookingDto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace HotelProject.Web.Areas.Admin.Controllers
 {
@@ -31,6 +32,20 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         public IActionResult AddBooking()
         { 
             return View(); 
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddBooking(CreateBookingDto createBookingDto)
+        {
+            createBookingDto.Status = "Onay Bekleniyor";
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(createBookingDto);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("https://localhost:7113/api/Booking", stringContent);
+            if(responseMessage.IsSuccessStatusCode) 
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }
