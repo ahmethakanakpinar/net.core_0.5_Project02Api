@@ -1,0 +1,111 @@
+﻿@model UpdateBookingDto
+@{
+    ViewData["Title"] = "UpdateBooking";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-validation">
+                    <form class="form-valide" method="post">
+                        <input type="hidden" asp-for="BookingID">
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="Name">
+                                Adınız Soyadınız <span asp-validation-for="Name" class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="Name" asp-for="Name" placeholder="Adınız Soyadınız">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="Mail">
+                                Mail Adresiniz <span asp-validation-for="Mail" class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="Mail" asp-for="Mail" placeholder="Mail Adresiniz">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="ServiceIcon">
+                                Giriş Tarihi<span asp-validation-for="Checkin" class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="date" class="form-control datetimepicker-input" id="checkin" asp-for="Checkin" placeholder="Giriş Tarihi" data-target="#date3" data-toggle="datetimepicker" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="ServiceIcon">
+                                Çıkış Tarihi<span asp-validation-for="Checkout" class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="date" class="form-control datetimepicker-input" id="checkout" asp-for="Checkout" placeholder="Çıkış Tarihi" data-target="#date4" data-toggle="datetimepicker" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="Mail">
+                                Yetişkin Sayısı <span asp-validation-for="AdultCount" class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-control" id="select1" asp-for="AdultCount">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="Mail">
+                                Çocuk Sayısı <span asp-validation-for="AdultCount" class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-control" id="select2" asp-for="ChildCount">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="Mail">
+                                Oda Sayısı <span asp-validation-for="AdultCount" class="text-danger">*</span>
+                            </label>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-control" id="select3" asp-for="RoomCount">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label" for="SpecialRequest">
+                                Özel İstekler<span asp-validation-for="SpecialRequest" class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <textarea class="form-control" placeholder="Özel İstekler" id="message" asp-for="SpecialRequest" style="height: 100px"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-8 ml-auto">
+                                <button type="submit" class="btn btn-primary">Rezervasyon Güncelle</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ExtraScripts {
+    <script src="~/adminweb/plugins/validation/jquery.validate.min.js"></script>
+    <script src="~/adminweb/plugins/validation/jquery.validate-init.js"></script>
+}
