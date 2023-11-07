@@ -260,3 +260,7 @@ C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Pr
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\HotelProject.DataAccessLayer.pdb
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\HotelProject.BusinessLayer.dll
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\HotelProject.BusinessLayer.pdb
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.Web\obj\Debug\net6.0\HotelProject.Web.MvcApplicationPartsAssemblyInfo.cs

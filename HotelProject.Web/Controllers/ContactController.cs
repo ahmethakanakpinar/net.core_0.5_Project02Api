@@ -22,18 +22,25 @@ namespace HotelProject.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(CreateContactDto createContactDto)
         {
-            createContactDto.Receiver = "ahmethakan.akpinar@tora.com.tr";
-            createContactDto.ReceiverName = "Ahmet Hakan";
-            createContactDto.Date = DateTime.Now;
-            var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(createContactDto);
-            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:7113/api/Contact", stringContent);
-            if(responseMessage.IsSuccessStatusCode)
+            if(ModelState.IsValid) 
             {
-                return RedirectToAction("Index");
+                createContactDto.Receiver = "ahmethakan.akpinar@tora.com.tr";
+                createContactDto.ReceiverName = "Ahmet Hakan";
+                createContactDto.Date = DateTime.Now;
+                var client = _httpClientFactory.CreateClient();
+                var jsonData = JsonConvert.SerializeObject(createContactDto);
+                StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                var responseMessage = await client.PostAsync("https://localhost:7113/api/Contact", stringContent);
+                if(responseMessage.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+                return View();
             }
-            return View();
+            else
+            {
+                return View();
+            }
         }
     }
 }

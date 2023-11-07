@@ -101,26 +101,26 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                    <input type="text" class="form-control" id="SenderName" asp-for="SenderName" placeholder="İsim Soyisim">
-                                            <label for="SenderName">İsim Soyisim</label>
+                                         <input type="text" class="form-control" id="SenderName" asp-for="SenderName" placeholder="İsim Soyisim">
+                                            <label for="SenderName">İsim Soyisim <span style="font-size:10px" asp-validation-for="SenderName" class="text-danger"></span></label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="email" class="form-control" id="Sender" asp-for="Sender" placeholder="Email">
-                                            <label for="Sender">Email</label>
+                                            <label for="Sender">Email <span style="font-size:10px" asp-validation-for="Sender" class="text-danger"></span></label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="Subject" asp-for="Subject" placeholder="Konu">
-                                            <label for="Subject">Konu</label>
+                                            <label for="Subject">Konu <span style="font-size:10px" asp-validation-for="Subject" class="text-danger"></span></label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <textarea class="form-control" placeholder="Mesaj" id="MessageContent" asp-for="MessageContent" style="height: 150px"></textarea>
-                                            <label for="MessageContent">Mesaj</label>
+                                            <label for="MessageContent">Mesaj <span style="font-size:10px" asp-validation-for="MessageContent" class="text-danger"></span></label>
                                         </div>
                                     </div>
                                     <div class="col-12">

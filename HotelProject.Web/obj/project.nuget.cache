@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "APvCHh8i2JYEiEp5n8PssKG2v/TQ/lXkzte/ZPznwElhDjWUQTFpioPirxpaVwyE+pjIRXAM3uUayBphpvTUZA==",
+  "dgSpecHash": "hFck7EIc69XXAU4yltbM9RUCzww78tFa7tcNJkEgsDdblONgLKfChHeeGyOH6axuUtZj7Wdeb7ENpJdnw/DC8A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hakan\\OneDrive - Tora\\Documents\\Visual Studio 2022\\asp-net-core\\Core_Proje2Api\\HotelProject.Web\\HotelProject.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hakan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Hakan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.8.0\\fluentvalidation.dependencyinjectionextensions.11.8.0.nupkg.sha512",
     "C:\\Users\\Hakan\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Hakan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Hakan\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

@@ -1,9 +1,13 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using HotelProject.BusinessLayer.Abstrack;
 using HotelProject.BusinessLayer.Concrete;
 using HotelProject.DataAccessLayer.Abstrack;
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.EntityFramework;
 using HotelProject.EntityLayer;
+using HotelProject.Web.Dtos.ContactDto;
+using HotelProject.Web.ValidationRules.ContactValidationRules;
 using System.Net;
 
 namespace HotelProject.Web
@@ -27,7 +31,9 @@ namespace HotelProject.Web
             builder.Services.AddScoped<IAboutService, AboutManager>();
 
             builder.Services.AddHttpClient();
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddTransient<IValidator<CreateContactDto>, ContactValidator>();
+            builder.Services.AddControllersWithViews().AddFluentValidation(options => options.RegisterValidatorsFromAssemblyContaining<Program>());
+
             builder.Services.AddAutoMapper(typeof(Program));
    
  
