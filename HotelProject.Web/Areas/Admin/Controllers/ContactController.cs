@@ -17,13 +17,18 @@ namespace HotelProject.Web.Areas.Admin.Controllers
 
         public async Task<IActionResult> ReceiverMessage()
         {
+            var adminemail = "admin@gmail.com";
+
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7113/api/Contact");
             if(responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
-                return View(values);
+                var allContacts = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
+
+                var filteredContacts = allContacts.Where(contact => contact.Receiver == adminemail).ToList();
+
+                return View(filteredContacts);
             }
             return View();
         }
