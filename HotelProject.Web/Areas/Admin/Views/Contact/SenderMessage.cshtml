@@ -39,3 +39,16 @@
 
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // /Admin/Contact/ReceiverMessage/ sayfasındaysanız bu kod çalışır
+        if (window.location.pathname === "/Admin/Contact/SenderMessage/") {
+
+            $('.list-group-item').removeClass('text-primary font-weight-bold');
+            // Tıklanan öğeye text-primary sınıfını ekleyin
+            $("#Gonderilen_Mesajlar").addClass('text-primary font-weight-bold');
+        }
+    });
+</script>
