@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "_ContactLayout";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+    
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="email-left-box">
+                                    <a href="email-compose.html" class="btn btn-primary btn-block">Mesaj Yaz</a>
+                                    <div class="mail-list mt-4">
+                                        <a href="email-inbox.html" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i><b>Gelen Mesajlar</b> <span class="badge badge-primary badge-sm float-right m-t-5">198</span> </a>
+                                        <a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Gönderen Mesajlar</a> 
+                                        <a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-star-o font-18 align-middle mr-2"></i>Önemli <span class="badge badge-danger badge-sm float-right m-t-5">47</span> </a>
+                                        <a href="#" class="list-group-item border-0 p-r-0"><i class="mdi mdi-file-document-box font-18 align-middle mr-2"></i>Draft</a><a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-trash font-18 align-middle mr-2"></i>Çöp Kutusu</a>
+                                    </div>
+                                </div>
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
