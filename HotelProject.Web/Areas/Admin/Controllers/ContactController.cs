@@ -46,5 +46,10 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public IActionResult SendMessage()
+        {
+            return View();
+        }
     }
 }
