@@ -1,7 +1,10 @@
-﻿
+﻿@model ResultContactDto
+@using HotelProject.Web.Helpers
 @{
     ViewData["Title"] = "ShowDetailMessage";
     Layout = "~/Areas/Admin/Views/Shared/_ContactLayout.cshtml";
+    var Name = (Context.Request.Query["source"] == "receiver") ? Model.SenderName : Model.ReceiverName;
+
 }
 
 <div class="email-right-box">
@@ -49,21 +52,20 @@
     <div class="read-content">
         <div class="media pt-5">
             <div class="media-body">
-                <h5 class="m-b-3">@((Context.Request.Query["source"] == "receiver") ? "" : ""; )</h5>
-                <p class="m-b-2">20 May 2018</p>
+                <h5 class="m-b-3">@Name</h5>
+                <p class="m-b-2">@Model.Date.ToShortDateString()</p>
             </div>
-
+          
         </div>
         <hr>
         <div class="media mb-4 mt-1">
             <div class="media-body">
-                <span class="float-right">07:23 AM</span>
-                <h4 class="m-0 text-primary">A collection of textile samples lay spread</h4>
+                <span class="float-right">@Model.Date.ToString("HH:mm")</span>
+                <h4 class="m-0 text-primary">@Model.Subject</h4>
             </div>
         </div>
         <p>
-            Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of
-            Grammar.
+           @Model.MessageContent
         </p>
     </div>
 </div>

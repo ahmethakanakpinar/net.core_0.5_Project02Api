@@ -12,9 +12,9 @@
                                 <div class="email-left-box">
                                     <a href="/Admin/Contact/SendMessage/" id="mesaj_gonder" class="btn btn-primary btn-block">Mesaj Gönder</a>
                                     <div class="mail-list mt-4">
-                                        <a href="/Admin/Contact/ReceiverMessage/" id="Gelen_Mesajlar" class="list-group-item border-0 p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i>Gelen Mesajlar<span class="badge badge-primary badge-sm float-right m-t-5">198</span> </a>
-                                        <a href="/Admin/Contact/SenderMessage/" id="Gonderilen_Mesajlar" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Gönderilen Mesajlar</a> 
-                                        <a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-star-o font-18 align-middle mr-2"></i>Önemli <span class="badge badge-danger badge-sm float-right m-t-5">47</span></a>
+                            <a href="/Admin/Contact/ReceiverMessage/" id="Gelen_Mesajlar" class="list-group-item border-0 p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i>Gelen Mesajlar<span class="badge badge-primary badge-sm float-right m-t-5">@ViewBag.receiverMessageCount</span> </a>
+                            <a href="/Admin/Contact/SenderMessage/" id="Gonderilen_Mesajlar" class="list-group-item border-0 p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i>Gönderilen Mesajlar <span class="badge badge-danger badge-sm float-right m-t-5">@ViewBag.senderMessageCount</span></a>
+                            <a href="#" class="list-group-item border-0 p-r-0"><i class="fa fa-star-o font-18 align-middle mr-2"></i>Önemli</a>
                                     </div>
                                 </div>
                                 @RenderBody()

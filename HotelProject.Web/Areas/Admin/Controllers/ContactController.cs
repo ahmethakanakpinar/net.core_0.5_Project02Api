@@ -28,7 +28,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
                 var allContacts = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
 
                 var filteredContacts = allContacts.Where(contact => contact.Receiver == adminemail).ToList();
-
+                ViewBag.receiverMessageCount = filteredContacts.Count;
                 return View(filteredContacts);
             }
             return View();
@@ -44,6 +44,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var allContacts = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
                 var filteredContacts = allContacts.Where(contact => contact.Sender == adminemail).ToList();
+                ViewBag.senderMessageCount = filteredContacts.Count;
                 return View(filteredContacts);
             }
             return View();
@@ -79,6 +80,14 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         
         public async Task<IActionResult> ShowDetailMessage(int contactId)
         {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"https://localhost:7113/api/Contact/{contactId}");
+            if(responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var value = JsonConvert.DeserializeObject<ResultContactDto>(jsonData);
+                return View(value);
+            }
             return View();
         }
     }
