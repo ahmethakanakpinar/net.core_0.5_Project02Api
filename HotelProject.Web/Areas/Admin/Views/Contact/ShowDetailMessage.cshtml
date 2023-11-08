@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "ShowDetailMessage";
+    Layout = "~/Areas/Admin/Views/Shared/_ContactLayout.cshtml";
+}
+
+<div class="email-right-box">
+    <div class="toolbar" role="toolbar">
+        <div class="btn-group m-b-20">
+            <button type="button" class="btn btn-light">
+                <i class="fa fa-archive"></i>
+            </button>
+            <button type="button" class="btn btn-light">
+                <i class="fa fa-exclamation-circle"></i>
+            </button>
+            <button type="button" class="btn btn-light">
+                <i class="fa fa-trash"></i>
+            </button>
+        </div>
+        <div class="btn-group m-b-20">
+            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-folder"></i>  <b class="caret m-l-5"></b>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript: void(0);">Social</a>  <a class="dropdown-item" href="javascript: void(0);">Promotions</a>  <a class="dropdown-item" href="javascript: void(0);">Updates</a>
+                <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+            </div>
+        </div>
+        <div class="btn-group m-b-20">
+            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-tag"></i>  <b class="caret m-l-5"></b>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript: void(0);">Updates</a>  <a class="dropdown-item" href="javascript: void(0);">Promotions</a>
+                <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+            </div>
+        </div>
+        
+        <div class="btn-group m-b-20">
+            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                More <span class="caret m-l-5"></span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="javascript: void(0);">Mark as Unread</a>  <a class="dropdown-item" href="javascript: void(0);">Add to Tasks</a>  <a class="dropdown-item"
+                                                                                                                                                                   href="javascript: void(0);">Add Star</a>  <a class="dropdown-item" href="javascript: void(0);">Mute</a>
+            </div>
+        </div>
+    </div>
+    <div class="read-content">
+        <div class="media pt-5">
+            <div class="media-body">
+                <h5 class="m-b-3">@((Context.Request.Query["source"] == "receiver") ? "" : ""; )</h5>
+                <p class="m-b-2">20 May 2018</p>
+            </div>
+
+        </div>
+        <hr>
+        <div class="media mb-4 mt-1">
+            <div class="media-body">
+                <span class="float-right">07:23 AM</span>
+                <h4 class="m-0 text-primary">A collection of textile samples lay spread</h4>
+            </div>
+        </div>
+        <p>
+            Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of
+            Grammar.
+        </p>
+    </div>
+</div>

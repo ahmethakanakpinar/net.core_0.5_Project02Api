@@ -18,8 +18,8 @@ namespace HotelProject.Web.Areas.Admin.Controllers
 
         public async Task<IActionResult> ReceiverMessage()
         {
+            ViewBag.Source = "receiver";
             var adminemail = "admin@gmail.com";
-
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7113/api/Contact");
             if(responseMessage.IsSuccessStatusCode)
@@ -35,6 +35,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         }
         public async Task<IActionResult> SenderMessage()
         {
+            ViewBag.Source = "sender";
             var adminemail = "admin@gmail.com";
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7113/api/Contact");
@@ -74,6 +75,11 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             {
                 return View();
             }
+        }
+        
+        public async Task<IActionResult> ShowDetailMessage(int contactId)
+        {
+            return View();
         }
     }
 }
