@@ -82,7 +82,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
 
                     SmtpClient clientmail = new SmtpClient();
                     clientmail.Connect("smtp.gmail.com", 587, false);
-                    clientmail.Authenticate("egitimiciniletisim@gmail.com", "buhtlrcbetrrdzqq");
+                    clientmail.Authenticate("egitimiciniletisim@gmail.com", "");
                     clientmail.Send(mimeMessage);
                     clientmail.Disconnect(true);
                     return RedirectToAction("SenderMessage");
