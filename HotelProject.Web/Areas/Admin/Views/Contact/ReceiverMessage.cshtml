@@ -1,4 +1,5 @@
 ﻿@model List<ResultContactDto>
+@using HotelProject.Web.Helpers
 @{
     ViewData["Title"] = "ReceiverMessage";
     Layout = "~/Areas/Admin/Views/Shared/_ContactLayout.cshtml";
@@ -29,7 +30,7 @@
                     </div>
                     <div class="col-mail col-mail-2">
                         <div class="subject"><span><b>Kimden : </b> @item.SenderName </span><span><b>Konu : </b>@item.Subject</span></div>
-                        <div class="date">11:49 am</div>
+                        <div class="date">@MyHelper.CalculateTimeAgo(item.Date)</div>
                     </div>
                 </a>
             </div>
