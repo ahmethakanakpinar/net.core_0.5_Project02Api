@@ -1,5 +1,7 @@
 ﻿using HotelProject.Web.Dtos.ContactDto;
+using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -68,6 +70,21 @@ namespace HotelProject.Web.Areas.Admin.Controllers
                 var responseMessage = await client.PostAsync("https://localhost:7113/api/Contact", stringContent);
                 if(responseMessage.IsSuccessStatusCode)
                 {
+                    MimeMessage mimeMessage = new MimeMessage();
+                    MailboxAddress mailboxAddressFrom = new MailboxAddress("Api Eğitim Kurs", "egitimiciniletisim@gmail.com");
+                    mimeMessage.From.Add(mailboxAddressFrom);
+                    MailboxAddress mailboxAddressTo = new MailboxAddress(sendMessageDto.ReceiverName, sendMessageDto.Receiver);
+                    mimeMessage.To.Add(mailboxAddressTo);
+                    var bodyBuilder = new BodyBuilder();
+                    bodyBuilder.TextBody = sendMessageDto.MessageContent;
+                    mimeMessage.Body = bodyBuilder.ToMessageBody();
+                    mimeMessage.Subject = sendMessageDto.Subject;
+
+                    SmtpClient clientmail = new SmtpClient();
+                    clientmail.Connect("smtp.gmail.com", 587, false);
+                    clientmail.Authenticate("egitimiciniletisim@gmail.com", "buhtlrcbetrrdzqq");
+                    clientmail.Send(mimeMessage);
+                    clientmail.Disconnect(true);
                     return RedirectToAction("SenderMessage");
                 }
                 return View();
