@@ -24,7 +24,7 @@ namespace HotelProject.Web.Controllers
         {
             if(ModelState.IsValid) 
             {
-                createContactDto.Receiver = "ahmethakan.akpinar@tora.com.tr";
+                createContactDto.Receiver = "admin@gmail.com";
                 createContactDto.ReceiverName = "Ahmet Hakan";
                 createContactDto.Date = DateTime.Now;
                 var client = _httpClientFactory.CreateClient();

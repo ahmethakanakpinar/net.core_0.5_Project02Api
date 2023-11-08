@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HotelProject.EntityLayer
+﻿namespace HotelProject.Web.Dtos.ContactDto
 {
-    public class Contact
+    public class SendMessageDto
     {
         public int ContactID { get; set; }
         public string? Sender { get; set; }
@@ -16,6 +10,5 @@ namespace HotelProject.EntityLayer
         public string Subject { get; set; }
         public string MessageContent { get; set; }
         public DateTime Date { get; set; }
-
     }
 }

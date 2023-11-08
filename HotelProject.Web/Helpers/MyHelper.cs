@@ -27,7 +27,7 @@
                 else if (timeDifference.TotalMinutes < 60)
                 {
                     int minutesAgo = (int)timeDifference.TotalMinutes;
-                    return $"{minutesAgo} Dakika Önce";
+                    return $"{minutesAgo} Dk Önce";
                 }
                 else if (timeDifference.TotalHours < 24)
                 {

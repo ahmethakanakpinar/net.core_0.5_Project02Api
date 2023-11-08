@@ -32,6 +32,7 @@ namespace HotelProject.Web
 
             builder.Services.AddHttpClient();
             builder.Services.AddTransient<IValidator<CreateContactDto>, ContactValidator>();
+            builder.Services.AddTransient<IValidator<SendMessageDto>, SendMessageValidator>();
             builder.Services.AddControllersWithViews().AddFluentValidation(options => options.RegisterValidatorsFromAssemblyContaining<Program>());
 
             builder.Services.AddAutoMapper(typeof(Program));

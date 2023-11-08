@@ -1,6 +1,7 @@
 ﻿using HotelProject.Web.Dtos.ContactDto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace HotelProject.Web.Areas.Admin.Controllers
 {
@@ -50,6 +51,29 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         public IActionResult SendMessage()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> SendMessage(SendMessageDto sendMessageDto)
+        {
+            sendMessageDto.Sender = "admin@gmail.com";
+            sendMessageDto.SenderName = "Ahmet Hakan Akpınar";
+            sendMessageDto.Date = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                var client = _httpClientFactory.CreateClient();
+                var jsonData = JsonConvert.SerializeObject(sendMessageDto);
+                StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                var responseMessage = await client.PostAsync("https://localhost:7113/api/Contact", stringContent);
+                if(responseMessage.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("SenderMessage");
+                }
+                return View();
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
