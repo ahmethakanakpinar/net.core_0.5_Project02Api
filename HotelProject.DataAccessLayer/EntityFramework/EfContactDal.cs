@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace HotelProject.DataAccessLayer.EntityFramework
 {
-    public class EfContectDal : GenericRepository<Contact>, IContactDal
+    public class EfContactDal : GenericRepository<Contact>, IContactDal
     {
-        public EfContectDal(Context context) : base(context)
+        public EfContactDal(Context context) : base(context)
         {
         }
 
