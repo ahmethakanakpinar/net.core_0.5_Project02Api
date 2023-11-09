@@ -28,10 +28,11 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var allContacts = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
-
-                var filteredContacts = allContacts.Where(contact => contact.Receiver == adminemail).ToList();
-                ViewBag.receiverMessageCount = filteredContacts.Count;
-                return View(filteredContacts);
+                var filteredContactsReceiver = allContacts.Where(contact => contact.Receiver == adminemail).ToList();
+                var filteredContactsSender = allContacts.Where(contact => contact.Sender == adminemail).ToList();
+                ViewBag.receiverMessageCount = filteredContactsReceiver.Count;
+                ViewBag.senderMessageCount = filteredContactsSender.Count;
+                return View(filteredContactsReceiver);
             }
             return View();
         }
@@ -45,15 +46,24 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var allContacts = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
-                var filteredContacts = allContacts.Where(contact => contact.Sender == adminemail).ToList();
-                ViewBag.senderMessageCount = filteredContacts.Count;
-                return View(filteredContacts);
+                var filteredContactsSender = allContacts.Where(contact => contact.Sender == adminemail).ToList();
+                var filteredContactsReceiver = allContacts.Where(contact => contact.Receiver == adminemail).ToList();
+                ViewBag.senderMessageCount = filteredContactsSender.Count;
+                ViewBag.receiverMessageCount = filteredContactsReceiver.Count;
+                return View(filteredContactsSender);
             }
             return View();
         }
         [HttpGet]
-        public IActionResult SendMessage()
+        public async Task<IActionResult> SendMessage()
         {
+            var client = _httpClientFactory.CreateClient();
+            var responseSender = await client.GetAsync("https://localhost:7113/api/Contact/GetSenderMessage/");
+            var responseReceiver = await client.GetAsync("https://localhost:7113/api/Contact/GetReceiverMessage/");
+            var filteredContactsSender = await responseSender.Content.ReadAsStringAsync();
+            var filteredContactsReceiver = await responseReceiver.Content.ReadAsStringAsync();
+            ViewBag.senderMessageCount = filteredContactsSender;
+            ViewBag.receiverMessageCount = filteredContactsReceiver;
             return View();
         }
         [HttpPost]
@@ -70,6 +80,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
                 var responseMessage = await client.PostAsync("https://localhost:7113/api/Contact", stringContent);
                 if(responseMessage.IsSuccessStatusCode)
                 {
+
                     MimeMessage mimeMessage = new MimeMessage();
                     MailboxAddress mailboxAddressFrom = new MailboxAddress("Api Eğitim Kurs", "egitimiciniletisim@gmail.com");
                     mimeMessage.From.Add(mailboxAddressFrom);
