@@ -8,6 +8,8 @@ using HotelProject.DataAccessLayer.EntityFramework;
 using HotelProject.EntityLayer;
 using HotelProject.Web.Dtos.ContactDto;
 using HotelProject.Web.ValidationRules.ContactValidationRules;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using System.Net;
 
 namespace HotelProject.Web
@@ -36,8 +38,23 @@ namespace HotelProject.Web
             builder.Services.AddControllersWithViews().AddFluentValidation(options => options.RegisterValidatorsFromAssemblyContaining<Program>());
 
             builder.Services.AddAutoMapper(typeof(Program));
-   
- 
+            builder.Services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                                .RequireAuthenticatedUser()
+                                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(120);
+                options.LoginPath = "/Login/Index";
+            });
+
+
+
 
             var app = builder.Build();
 
@@ -52,6 +69,8 @@ namespace HotelProject.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseRouting();
 

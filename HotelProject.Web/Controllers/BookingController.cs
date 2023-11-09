@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HotelProject.Web.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     public class BookingController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

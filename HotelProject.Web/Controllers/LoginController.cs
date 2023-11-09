@@ -27,10 +27,15 @@ namespace HotelProject.Web.Controllers
             var result = await _signInManager.PasswordSignInAsync(loginUserDto.UserName, loginUserDto.PasswordHash, true, true);
             if(result.Succeeded)
             {
-                return RedirectToAction("Index", "Staff");
+                return RedirectToAction("Index", "Contact");
             }
             return View();
         }
-       
+        [HttpGet]
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
+        }
     }
 }
