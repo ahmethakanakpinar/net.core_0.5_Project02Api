@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-    internal class ContactCategoryManager : IContactCategoryService
+    public class ContactCategoryManager : IContactCategoryService
     {
         private readonly IContactCategoryDal _contactCategoryDal;
 

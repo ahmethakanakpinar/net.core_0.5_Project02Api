@@ -39,7 +39,10 @@ namespace HotelProject.WebApi
             builder.Services.AddScoped<IBookingService, BookingManager>();
             
             builder.Services.AddScoped<IContactDal, EfContectDal>();
-            builder.Services.AddScoped<IContactService, ContactManager>();
+            builder.Services.AddScoped<IContactService, ContactManager>(); 
+            
+            builder.Services.AddScoped<IContactCategoryDal, EfContactCategoryDal>();
+            builder.Services.AddScoped<IContactCategoryService, ContactCategoryManager>();
 
             builder.Services.AddCors(opt =>
             {
