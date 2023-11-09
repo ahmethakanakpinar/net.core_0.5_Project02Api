@@ -38,7 +38,7 @@ namespace HotelProject.WebApi
             builder.Services.AddScoped<IBookingDal, EfBookingDal>();
             builder.Services.AddScoped<IBookingService, BookingManager>();
             
-            builder.Services.AddScoped<IContactDal, EfContectDal>();
+            builder.Services.AddScoped<IContactDal, EfContactDal>();
             builder.Services.AddScoped<IContactService, ContactManager>(); 
             
             builder.Services.AddScoped<IContactCategoryDal, EfContactCategoryDal>();
