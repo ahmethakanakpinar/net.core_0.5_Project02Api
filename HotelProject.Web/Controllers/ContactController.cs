@@ -8,7 +8,7 @@ using System.Text;
 
 namespace HotelProject.Web.Controllers
 {
-    //[AllowAnonymous]
+    [AllowAnonymous]
     public class ContactController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
