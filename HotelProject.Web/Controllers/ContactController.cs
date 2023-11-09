@@ -1,7 +1,9 @@
-﻿using HotelProject.Web.Dtos.ContactDto;
+﻿using HotelProject.Web.Dtos.ContactCategoryDto;
+using HotelProject.Web.Dtos.ContactDto;
 using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MimeKit;
 using Newtonsoft.Json;
 using System.Text;
@@ -19,8 +21,22 @@ namespace HotelProject.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:7113/api/ContactCategory");
+            if(responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var data = JsonConvert.DeserializeObject<List<ResultContactCategoryDto>>(jsonData);
+                List<SelectListItem> values = (from x in data select new SelectListItem
+                {
+                    Text = x.ContactCategoryName,
+                    Value = x.ContactCategoryID.ToString()
+                }).ToList();
+                ViewBag.ContactCategory = values;
+                return View();
+            }
             return View();
         }
         [HttpPost]

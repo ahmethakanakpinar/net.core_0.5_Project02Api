@@ -10,6 +10,6 @@ namespace HotelProject.EntityLayer
     {
         public int ContactCategoryID { get; set; }
         public string ContactCategoryName { get; set; }
-        public List<Contact> contacts { get; set; }
+        public List<Contact>? contacts { get; set; }
     }
 }

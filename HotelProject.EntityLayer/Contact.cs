@@ -17,7 +17,7 @@ namespace HotelProject.EntityLayer
         public string MessageContent { get; set; }
         public DateTime Date { get; set; }
         public int ContactCategoryID { get; set; }
-        public ContactCategory ContactCategory { get; set; }
+        public ContactCategory? ContactCategory { get; set; }
 
     }
 }
