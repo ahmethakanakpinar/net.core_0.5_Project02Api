@@ -15,5 +15,17 @@ namespace HotelProject.DataAccessLayer.EntityFramework
         public EfContectDal(Context context) : base(context)
         {
         }
+
+        public int GetReceiverMessage()
+        {
+            var context = new Context();
+            return context.Contacts.Where(c => c.Receiver == "admin@gmail.com").Count();
+        }
+
+        public int GetSenderMessage()
+        {
+            var context = new Context();
+            return context.Contacts.Where(c => c.Sender == "admin@gmail.com").Count();
+        }
     }
 }

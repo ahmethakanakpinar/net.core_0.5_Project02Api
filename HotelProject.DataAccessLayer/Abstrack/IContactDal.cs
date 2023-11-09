@@ -9,5 +9,7 @@ namespace HotelProject.DataAccessLayer.Abstrack
 {
     public interface IContactDal : IGenericDal<Contact>
     {
+        public int GetReceiverMessage();
+        public int GetSenderMessage();
     }
 }

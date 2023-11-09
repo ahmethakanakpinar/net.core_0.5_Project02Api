@@ -9,5 +9,8 @@ namespace HotelProject.BusinessLayer.Abstrack
 {
     public interface IContactService : IGenericService<Contact>
     {
+        public int TGetReceiverMessage();
+        public int TGetSenderMessage();
+
     }
 }

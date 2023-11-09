@@ -33,6 +33,16 @@ namespace HotelProject.BusinessLayer.Concrete
             return _contactDal.GetList();
         }
 
+        public int TGetReceiverMessage()
+        {
+            return _contactDal.GetReceiverMessage();
+        }
+
+        public int TGetSenderMessage()
+        {
+            return _contactDal.GetSenderMessage();
+        }
+
         public void TInsert(Contact t)
         {
             _contactDal.Insert(t);
