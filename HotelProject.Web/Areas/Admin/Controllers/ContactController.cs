@@ -23,7 +23,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             ViewBag.Source = "receiver";
             var adminemail = "admin@gmail.com";
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7113/api/Contact");
+            var responseMessage = await client.GetAsync("https://localhost:7113/api/Contact/GetReceivers");
             if(responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();

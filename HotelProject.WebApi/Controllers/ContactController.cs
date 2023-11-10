@@ -57,5 +57,10 @@ namespace HotelProject.WebApi.Controllers
         {
             return Ok(_contactService.TGetSenderMessage());
         }
+        [HttpGet("GetReceivers")]
+        public IActionResult GetReceivers()
+        {
+            return Ok(_contactService.TGetReceivers());
+        }
     }
 }

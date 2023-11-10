@@ -38,6 +38,11 @@ namespace HotelProject.BusinessLayer.Concrete
             return _contactDal.GetReceiverMessage();
         }
 
+        public List<Contact> TGetReceivers()
+        {
+            return _contactDal.GetReceivers();
+        }
+
         public int TGetSenderMessage()
         {
             return _contactDal.GetSenderMessage();

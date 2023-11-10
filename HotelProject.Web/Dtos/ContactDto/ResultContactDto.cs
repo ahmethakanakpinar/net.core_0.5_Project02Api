@@ -1,4 +1,6 @@
-﻿namespace HotelProject.Web.Dtos.ContactDto
+﻿using HotelProject.EntityLayer;
+
+namespace HotelProject.Web.Dtos.ContactDto
 {
     public class ResultContactDto
     {
@@ -10,5 +12,7 @@
         public string Subject { get; set; }
         public string MessageContent { get; set; }
         public DateTime Date { get; set; }
+        public int ContactCategoryID { get; set; }
+        public ContactCategory? ContactCategory { get; set; }
     }
 }

@@ -11,5 +11,6 @@ namespace HotelProject.DataAccessLayer.Abstrack
     {
         public int GetReceiverMessage();
         public int GetSenderMessage();
+        public List<Contact> GetReceivers();
     }
 }

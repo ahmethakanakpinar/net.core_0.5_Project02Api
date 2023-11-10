@@ -11,6 +11,6 @@ namespace HotelProject.BusinessLayer.Abstrack
     {
         public int TGetReceiverMessage();
         public int TGetSenderMessage();
-
+        public List<Contact> TGetReceivers();
     }
 }
