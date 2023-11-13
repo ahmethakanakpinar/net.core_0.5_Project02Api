@@ -8,7 +8,7 @@
             {
                 if (input == null || input == "")
                 {
-                    return "pic-1.png";
+                    return "/userimage/pic-1.png";
                 }
                 else
                 {

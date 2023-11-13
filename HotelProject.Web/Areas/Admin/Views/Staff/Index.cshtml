@@ -1,4 +1,5 @@
 ﻿@model List<ResultStaffDto>
+@using HotelProject.Web.Helpers
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -28,7 +29,7 @@
                             {
                                 <tr>
                                     <td>
-                                        <img class="rounded-circle" src="@item.ImageUrl" height="50" width="50" alt="">
+                                        <img class="rounded-circle" src="@MyHelper.DefaultImage(item.ImageUrl)" height="50" width="50" alt="">
                                     </td>
                                     <td>@item.Name</td>
                                     <td>
