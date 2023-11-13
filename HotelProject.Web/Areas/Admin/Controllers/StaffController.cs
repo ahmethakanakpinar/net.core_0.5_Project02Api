@@ -2,6 +2,7 @@
 using HotelProject.Web.Models.Staff;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Text;
 
 namespace HotelProject.Web.Areas.Admin.Controllers
@@ -38,6 +39,17 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> AddStaff(CreateStaffDto createStaffDto)
         {
+
+            if (createStaffDto.Image != null)
+            {
+                var resource = Directory.GetCurrentDirectory();
+                var extension = Path.GetExtension(createStaffDto.Image.FileName);
+                var imagename = Guid.NewGuid() + extension;
+                var savelocation = resource + "/wwwroot/userimage/" + imagename;
+                var stream = new FileStream(savelocation, FileMode.Create);
+                await createStaffDto.Image.CopyToAsync(stream);
+                createStaffDto.ImageUrl = "/userimage/" + imagename;
+            }
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createStaffDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
@@ -51,6 +63,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateStaff(int id)
         {
+           
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"https://localhost:7113/api/Staff/{id}");
             if (responseMessage.IsSuccessStatusCode)
@@ -64,6 +77,17 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateStaff(UpdateStaffDto updateStaffDto)
         {
+
+            if (updateStaffDto.Image != null)
+            {
+                var resource = Directory.GetCurrentDirectory();
+                var extension = Path.GetExtension(updateStaffDto.Image.FileName);
+                var imagename = Guid.NewGuid() + extension;
+                var savelocation = resource + "/wwwroot/userimage/" + imagename;
+                var stream = new FileStream(savelocation, FileMode.Create);
+                await updateStaffDto.Image.CopyToAsync(stream);
+                updateStaffDto.ImageUrl = "/userimage/" + imagename;
+            }
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateStaffDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");

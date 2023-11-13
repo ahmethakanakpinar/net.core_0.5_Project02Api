@@ -299,7 +299,7 @@
     padding: $custom-file-padding-y $custom-file-padding-x;
     line-height: $custom-file-line-height;
     color: $custom-file-button-color;
-    content: "Browse";
+    content: "Yükle";
     @include gradient-bg($custom-file-button-bg);
     border-left: $custom-file-border-width solid $custom-file-border-color;
     @include border-radius(0 $custom-file-border-radius $custom-file-border-radius 0);
