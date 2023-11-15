@@ -1,0 +1,57 @@
+﻿@model List<ResultUserDto>
+@using HotelProject.Web.Helpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Ekip</h4>
+                <div class="table-responsive">
+                    <table class="table header-border">
+                        <thead>
+                            <tr>
+                                <th>Resim</th>
+                                <th>Adı</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>Rol</th>
+                                <th>Telefon Numarası</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img class="rounded-circle" src="@MyHelper.DefaultImage(item.ImageUrl)" height="50" width="50" alt="">
+                                    </td>
+                                    <td>
+                                        <span class="label rounded">@item.Name @item.Surname</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">@item.UserName</span>
+                                    </td>
+                                    <td>
+                                        <span class="label gradient-4 rounded">@item.Role</span>
+                                    </td>
+                                    <td>
+                                        <span class="label gradient-5 rounded">@item.PhoneNumber</span>
+                                    </td>
+                                    <td>
+                                        <a href="/Admin/Staff/DeleteStaff/@item.Id" class="btn mb-1 btn-rounded btn-danger">Sil</a>
+                                        <a href="/Admin/Staff/UpdateStaff/@item.Id" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
+                                    </td>
+                                </tr>
+                            } 
+                        </tbody>
+                    </table>
+                    <a href="/Admin/Staff/AddStaff/" class="btn btn-info">Yeni Personel Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
