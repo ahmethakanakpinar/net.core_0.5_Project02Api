@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Linq;
 
 namespace HotelProject.Web.Areas.Admin.Controllers
@@ -92,6 +93,25 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             }
             return View();
 
+        }
+        [HttpGet]
+        public async Task<IActionResult> UpdateUser(int id)
+        {
+            var userupdate = _appUserService.TGetById(id);
+            var value = _mapper.Map<UpdateUserDto>(userupdate);
+
+            var role = _appRoleService.TGetList();
+            var data = _mapper.Map<List<ResultUserRoleDto>>(role);
+            // SelectListItem listesine dönüştürme
+            List<SelectListItem> userroles = data.Select(x => new SelectListItem
+            {
+                Text = x.Name,
+                Value = x.Id.ToString()
+            }).ToList();
+
+            ViewBag.AppUserRoles = userroles;
+
+            return View(value);
         }
     }
 }

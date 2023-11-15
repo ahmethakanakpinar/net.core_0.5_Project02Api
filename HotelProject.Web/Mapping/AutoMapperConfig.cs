@@ -43,6 +43,7 @@ namespace HotelProject.Web.Mapping
             CreateMap<ResultContactCategoryDto, ContactCategory>().ReverseMap();
             CreateMap<ResultUserDto, AppUser>().ReverseMap();
             CreateMap<CreateUserDto, AppUser>().ReverseMap();
+            CreateMap<UpdateUserDto, AppUser>().ReverseMap();
             CreateMap<ResultUserRoleDto, AppRole>().ReverseMap();
 
         }
