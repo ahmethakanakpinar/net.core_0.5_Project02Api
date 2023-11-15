@@ -27,7 +27,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            var user = _appUserService.TGetList();
+            var user = _appUserService.TGetAppRole();
             var values = _mapper.Map<List<ResultUserDto>>(user);
 
 

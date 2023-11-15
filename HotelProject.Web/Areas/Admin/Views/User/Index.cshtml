@@ -5,6 +5,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+
 }
 
 <div class="row">
@@ -27,6 +28,7 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
+                                var phone = (item.PhoneNumber == null) ? "Girilmedi" : item.PhoneNumber;
                                 <tr>
                                     <td>
                                         <img class="rounded-circle" src="@MyHelper.DefaultImage(item.ImageUrl)" height="50" width="50" alt="">
@@ -41,7 +43,7 @@
                                         <span class="label gradient-4 rounded">@item.AppRole.Name</span>
                                     </td>
                                     <td>
-                                        <span class="label gradient-5 rounded">@item.PhoneNumber</span>
+                                        <span class="label gradient-5 rounded">@phone</span>
                                     </td>
                                     <td>
                                         <a href="/Admin/Staff/DeleteStaff/" class="btn mb-1 btn-rounded btn-danger">Sil</a>

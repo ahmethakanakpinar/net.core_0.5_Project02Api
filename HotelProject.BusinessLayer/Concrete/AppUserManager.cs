@@ -23,6 +23,11 @@ namespace HotelProject.BusinessLayer.Concrete
             _appUserDal.Delete(t);
         }
 
+        public List<AppUser> TGetAppRole()
+        {
+            return _appUserDal.GetAppRole();
+        }
+
         public AppUser TGetById(int id)
         {
             return _appUserDal.GetByID(id);

@@ -2,6 +2,7 @@
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.Repositories;
 using HotelProject.EntityLayer;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,13 @@ namespace HotelProject.DataAccessLayer.EntityFramework
     {
         public EfAppUserDal(Context context) : base(context)
         {
+        }
+
+        public List<AppUser> GetAppRole()
+        {
+            var context = new Context();
+            return context.Users.OfType<AppUser>().Include(c => c.AppRole).ToList();
+            //return context.Users.Include(c => c.AppRole).ToList();
         }
     }
 }

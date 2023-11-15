@@ -13,7 +13,6 @@ namespace HotelProject.EntityLayer
         public string Surname { get; set; }
         public string? City { get; set; }
         public string? ImageUrl { get; set; }
-        public int RoleId { get; set; }
         public AppRole? AppRole { get; set; }
     }
 }
