@@ -14,5 +14,6 @@ namespace HotelProject.Web.Dtos.RegisterDto
         public string Email { get; set; }
         [Required(ErrorMessage = "Şifre Boş Geçilemez!")]
         public string PasswordHash { get; set; }
+        public int AppRoleId {get; set;}
     }
 }

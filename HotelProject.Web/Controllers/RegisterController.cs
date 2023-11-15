@@ -24,6 +24,7 @@ namespace HotelProject.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(RegisterUserDto registerUserDto)
         {
+            registerUserDto.AppRoleId = 2;
             if(!ModelState.IsValid)
             {
                 return View();
@@ -34,6 +35,7 @@ namespace HotelProject.Web.Controllers
                 Name = registerUserDto.Name,
                 Surname = registerUserDto.Surname,
                 Email = registerUserDto.Email,
+                AppRoleId = registerUserDto.AppRoleId
             };
             var result = await _userManager.CreateAsync(appUser, registerUserDto.PasswordHash);
             if(result.Succeeded)
