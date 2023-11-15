@@ -25,5 +25,10 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             var values = _mapper.Map<List<ResultUserRoleDto>>(roledata);
             return View(values);
         }
+        [HttpGet]
+        public IActionResult AddUserRole()
+        {
+            return View();
+        }
     }
 }
