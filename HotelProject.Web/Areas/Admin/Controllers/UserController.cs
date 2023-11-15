@@ -20,20 +20,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var users = await _userManager.Users.ToListAsync(); // Kullanıcı listesini materyalize et
-
-            var modelList = await Task.WhenAll(users.Select(async user => new ResultUserDto
-            {
-                Name = user.Name,
-                Surname = user.Surname,
-                ImageUrl = user.ImageUrl,
-                UserName = user.UserName,
-                PhoneNumber = user.PhoneNumber,
-                Role = (await _userManager.GetRolesAsync(user)).FirstOrDefault()
-            }));
-
-            return View(modelList.ToList());
+            return View();
         }
-
     }
 }
