@@ -1,0 +1,42 @@
+﻿@model List<ResultUserRoleDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4>Kullanıcı Rolleri</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Rol Adı</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach(var item in Model)
+                            {
+                                <tr>
+                                    <th>@item.Id</th>
+                                    <td>@item.Name</td>
+                                    <td>
+                                        <a href="/Admin/UserRole/AddUserRole/@item.Id" class="btn mb-1 btn-rounded btn-danger">Sil</a>
+                                        <a href="/Admin/UserRole/DeleteUserRole/@item.Id" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                        <a href="/Admin/UserRole/AddUserRole/" class="btn btn-info">Yeni Kullanıcı Rolü Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /# column -->
+    </div>
