@@ -44,6 +44,7 @@ namespace HotelProject.Web.Mapping
             CreateMap<ResultUserDto, AppUser>().ReverseMap();
             CreateMap<CreateUserDto, AppUser>().ReverseMap();
             CreateMap<UpdateUserDto, AppUser>().ReverseMap();
+            CreateMap<ProfileUserDto, AppUser>().ReverseMap();
             CreateMap<ResultUserRoleDto, AppRole>().ReverseMap();
 
         }

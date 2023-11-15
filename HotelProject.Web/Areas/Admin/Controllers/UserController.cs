@@ -193,12 +193,14 @@ namespace HotelProject.Web.Areas.Admin.Controllers
 
             if (profileUserDto.OldPasswordHash != null)
             {
-                await _userManager.ChangePasswordAsync(user, profileUserDto.OldPasswordHash, profileUserDto.PasswordHash);
+                var oldpass = await _userManager.ChangePasswordAsync(user, profileUserDto.OldPasswordHash, profileUserDto.PasswordHash);
+                if (!oldpass.Succeeded)
+                    return View();
             }
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "User");
+                return RedirectToAction("Index", "Dashboard");
             }
             return View();
         }
