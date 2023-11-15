@@ -1,4 +1,5 @@
 ﻿using HotelProject.EntityLayer;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotelProject.Web.Dtos.UserDto
 {
@@ -13,6 +14,8 @@ namespace HotelProject.Web.Dtos.UserDto
         public string? ImageUrl { get; set; }
         public string UserName { get; set; }
         public string? PasswordHash { get; set; }
+        [Compare("PasswordHash", ErrorMessage = "Şifreler Uyumlu Değil")]
+        public string? ConfirmPasswordHash { get; set; }
         public string? PhoneNumber { get; set; }
         public int AppRoleId { get; set; }
     }

@@ -97,6 +97,7 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateUser(int id)
         {
+
             var userupdate = _appUserService.TGetById(id);
             var value = _mapper.Map<UpdateUserDto>(userupdate);
 
@@ -112,6 +113,46 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             ViewBag.AppUserRoles = userroles;
 
             return View(value);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateUser(UpdateUserDto updateUserDto)
+        {
+            var user = _appUserService.TGetById(updateUserDto.Id);
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            if (updateUserDto.Image != null)
+            {
+                var resource = Directory.GetCurrentDirectory();
+                var extension = Path.GetExtension(updateUserDto.Image.FileName);
+                var imagename = Guid.NewGuid() + extension;
+                var savelocation = resource + "/wwwroot/userimage/" + imagename;
+                var stream = new FileStream(savelocation, FileMode.Create);
+                await updateUserDto.Image.CopyToAsync(stream);
+                updateUserDto.ImageUrl = "/userimage/" + imagename;
+                user.ImageUrl = updateUserDto.ImageUrl;
+            }
+
+            user.UserName = updateUserDto.UserName;
+            user.Name = updateUserDto.Name;
+            user.Surname = updateUserDto.Surname;
+            user.City = updateUserDto.City;
+            user.Email = updateUserDto.Email;
+            user.PhoneNumber = updateUserDto.PhoneNumber;
+            user.AppRoleId = updateUserDto.AppRoleId;
+           
+            if (updateUserDto.PasswordHash != null)
+            {
+               user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, updateUserDto.PasswordHash);
+            }
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "User");
+            }
+            return View();
         }
     }
 }
