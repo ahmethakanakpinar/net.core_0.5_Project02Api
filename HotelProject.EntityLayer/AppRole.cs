@@ -9,5 +9,6 @@ namespace HotelProject.EntityLayer
 {
     public class AppRole : IdentityRole<int>
     {
+        public List<AppUser> users { get; set; }
     }
 }
