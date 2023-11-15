@@ -1,10 +1,13 @@
 ﻿@model List<ResultUserDto>
 
 @using HotelProject.Web.Helpers
+@using System.Security.Claims;
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
 }
 
@@ -47,7 +50,14 @@
                                     </td>
                                     <td>
                                         <a href="/Admin/User/DeleteUser/@item.Id" class="btn mb-1 btn-rounded btn-danger">Sil</a>
-                                        <a href="/Admin/User/UpdateUser/@item.Id" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
+                                        @if (userId == item.Id.ToString())
+                                        {
+                                            <a href="/Admin/Login/Profile/@item.Id" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="/Admin/User/UpdateUser/@item.Id" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
+                                        }
                                     </td>
                                 </tr>
                             } 
