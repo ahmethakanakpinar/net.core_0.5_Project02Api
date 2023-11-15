@@ -29,9 +29,11 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         {
             var user = _appUserService.TGetAppRole();
             var values = _mapper.Map<List<ResultUserDto>>(user);
-
-
             return View(values);
+        }
+        public IActionResult AddUser()
+        {
+            return View();
         }
     }
 }
