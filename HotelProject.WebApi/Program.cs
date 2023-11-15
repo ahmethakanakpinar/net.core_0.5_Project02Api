@@ -44,6 +44,12 @@ namespace HotelProject.WebApi
             builder.Services.AddScoped<IContactCategoryDal, EfContactCategoryDal>();
             builder.Services.AddScoped<IContactCategoryService, ContactCategoryManager>();
 
+            builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
+            builder.Services.AddScoped<IAppUserService, AppUserManager>();
+
+            builder.Services.AddScoped<IAppRoleDal, EfAppRoleDal>();
+            builder.Services.AddScoped<IAppRoleService, AppRoleManager>();
+
             builder.Services.AddCors(opt =>
             {
                 opt.AddPolicy("OtelApiCors", opts =>

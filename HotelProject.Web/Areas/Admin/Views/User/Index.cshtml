@@ -1,5 +1,7 @@
 ﻿@model List<ResultUserDto>
+
 @using HotelProject.Web.Helpers
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -36,14 +38,14 @@
                                         <span class="text-muted">@item.UserName</span>
                                     </td>
                                     <td>
-                                        <span class="label gradient-4 rounded">@item.Role</span>
+                                        <span class="label gradient-4 rounded">@item.AppRole.Name</span>
                                     </td>
                                     <td>
                                         <span class="label gradient-5 rounded">@item.PhoneNumber</span>
                                     </td>
                                     <td>
-                                        <a href="/Admin/Staff/DeleteStaff/@item.Id" class="btn mb-1 btn-rounded btn-danger">Sil</a>
-                                        <a href="/Admin/Staff/UpdateStaff/@item.Id" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
+                                        <a href="/Admin/Staff/DeleteStaff/" class="btn mb-1 btn-rounded btn-danger">Sil</a>
+                                        <a href="/Admin/Staff/UpdateStaff/" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
                                     </td>
                                 </tr>
                             } 

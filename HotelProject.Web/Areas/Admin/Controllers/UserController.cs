@@ -1,4 +1,7 @@
-﻿using HotelProject.EntityLayer;
+﻿using AutoMapper;
+using HotelProject.BusinessLayer.Abstrack;
+using HotelProject.EntityLayer;
+using HotelProject.Web.Dtos.AboutDto;
 using HotelProject.Web.Dtos.UserDto;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -12,15 +15,23 @@ namespace HotelProject.Web.Areas.Admin.Controllers
     public class UserController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly IAppUserService _appUserService;
+        private readonly IMapper _mapper;
 
-        public UserController(UserManager<AppUser> userManager)
+        public UserController(UserManager<AppUser> userManager, IAppUserService appUserService, IMapper mapper)
         {
             _userManager = userManager;
+            _appUserService = appUserService;
+            _mapper = mapper;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View();
+            var user = _appUserService.TGetList();
+            var values = _mapper.Map<List<ResultUserDto>>(user);
+
+
+            return View(values);
         }
     }
 }

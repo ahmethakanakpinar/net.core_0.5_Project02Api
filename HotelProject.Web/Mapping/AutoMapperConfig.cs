@@ -11,6 +11,7 @@ using HotelProject.Web.Dtos.ServiceDto;
 using HotelProject.Web.Dtos.StaffDto;
 using HotelProject.Web.Dtos.SubscribeDto;
 using HotelProject.Web.Dtos.TestimonialDto;
+using HotelProject.Web.Dtos.UserDto;
 
 namespace HotelProject.Web.Mapping
 {
@@ -39,6 +40,8 @@ namespace HotelProject.Web.Mapping
             CreateMap<CreateContactDto, Contact>().ReverseMap();
             CreateMap<ResultContactDto, Contact>().ReverseMap();
             CreateMap<ResultContactCategoryDto, ContactCategory>().ReverseMap();
+            CreateMap<ResultUserDto, AppUser>().ReverseMap();
+
         }
     }
 }

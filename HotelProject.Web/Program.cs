@@ -37,6 +37,12 @@ namespace HotelProject.Web
             builder.Services.AddTransient<IValidator<SendMessageDto>, SendMessageValidator>();
             builder.Services.AddControllersWithViews().AddFluentValidation(options => options.RegisterValidatorsFromAssemblyContaining<Program>());
 
+            builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
+            builder.Services.AddScoped<IAppUserService, AppUserManager>();
+
+            builder.Services.AddScoped<IAppRoleDal, EfAppRoleDal>();
+            builder.Services.AddScoped<IAppRoleService, AppRoleManager>();
+
             builder.Services.AddAutoMapper(typeof(Program));
             builder.Services.AddMvc(config =>
             {

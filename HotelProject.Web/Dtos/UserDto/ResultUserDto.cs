@@ -1,4 +1,6 @@
-﻿namespace HotelProject.Web.Dtos.UserDto
+﻿using HotelProject.EntityLayer;
+
+namespace HotelProject.Web.Dtos.UserDto
 {
     public class ResultUserDto
     {
@@ -9,9 +11,10 @@
         public string? ImageUrl { get; set; }
         public string UserName { get; set; }
 
-        public string PhoneNumber {  get; set; }
+        public string PhoneNumber { get; set; }
 
-        public string Role { get; set; }
+        public int RoleId { get; set; }
+        public AppRole? AppRole { get; set; }
 
     }
 }
