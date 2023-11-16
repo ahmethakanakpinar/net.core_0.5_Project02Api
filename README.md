@@ -2,5 +2,3 @@
 Asp.net Core Project With API
 
 Yapılacaklar <br>
-Siteye Odalar, Hizmetler Sayfaları eklenecek <br>
-Admin Dashboard düzenlenecek <br> 
