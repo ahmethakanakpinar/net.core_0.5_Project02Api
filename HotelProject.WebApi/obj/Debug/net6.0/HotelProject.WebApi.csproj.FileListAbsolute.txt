@@ -83,3 +83,4 @@ C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Pr
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.WebApi\obj\Debug\net6.0\HotelProject.WebApi.sourcelink.json

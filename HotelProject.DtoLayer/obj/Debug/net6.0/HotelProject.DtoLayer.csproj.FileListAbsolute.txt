@@ -15,3 +15,4 @@ C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Pr
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.DtoLayer\obj\Debug\net6.0\HotelProject.DtoLayer.pdb
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.DtoLayer\obj\Debug\net6.0\HotelProject.DtoLayer.genruntimeconfig.cache
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.DtoLayer\obj\Debug\net6.0\ref\HotelProject.DtoLayer.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.DtoLayer\obj\Debug\net6.0\HotelProject.DtoLayer.sourcelink.json

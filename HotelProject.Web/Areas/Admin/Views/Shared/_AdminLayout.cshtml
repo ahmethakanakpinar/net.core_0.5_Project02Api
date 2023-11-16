@@ -7,6 +7,7 @@
 <html lang="en">
 
 <head>
+    @RenderSection("ExtraStyles", required: false)
     @await Html.PartialAsync("HeadPartial")
 </head>
 
@@ -44,7 +45,7 @@
             Content body start
         ***********************************-->
         <div class="content-body">
-            <div class="container-fluid">
+            <div class="container-fluid mt-3">
                @RenderBody()
             </div>
             <!-- #/ container -->

@@ -5,7 +5,6 @@ namespace HotelProject.Web.Areas.Admin.Controllers
 {
     [Authorize(Roles = "Admin, Ziyaretçi")]
     [Area("Admin")]
-    [Route("/Admin/[controller]/[action]/{id?}")]
     public class DashboardController : Controller
     {
         public IActionResult Index()

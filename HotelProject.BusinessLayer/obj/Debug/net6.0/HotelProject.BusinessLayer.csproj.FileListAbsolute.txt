@@ -17,3 +17,4 @@ C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Pr
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.BusinessLayer\obj\Debug\net6.0\HotelProject.BusinessLayer.pdb
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.BusinessLayer\obj\Debug\net6.0\HotelProject.BusinessLayer.genruntimeconfig.cache
 C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.BusinessLayer\obj\Debug\net6.0\ref\HotelProject.BusinessLayer.dll
+C:\Users\Hakan\OneDrive - Tora\Documents\Visual Studio 2022\asp-net-core\Core_Proje2Api\HotelProject.BusinessLayer\obj\Debug\net6.0\HotelProject.BusinessLayer.sourcelink.json
