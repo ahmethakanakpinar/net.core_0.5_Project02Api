@@ -27,6 +27,7 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
+
                                 string result = (item.SpecialRequest != null) ? (item.SpecialRequest.Substring(0, Math.Min(item.SpecialRequest.Length, 50))) : "Yok";
                                 var link = "";
                                 var buttonclass = "";
@@ -58,10 +59,8 @@
                                       
                                     </td>
                                     <td>
-                                        <form asp-action="ApproveBooking" asp-controller="Booking" method="post">
-                                            <a href="@link" class="btn btn-outline-@buttonclass">@metin</a>
-                                        </form>
-                                        <a href="#" class="btn btn-outline-primary">Detaylar</a>
+                                        <button type="button" class="btn btn-outline-@buttonclass" onclick="submitForm('/Admin/Booking/ApproveBooking/@item.BookingID')">@metin</button>
+                                        <button type="button" class="btn mb-1 btn-rounded btn-primary" onclick="submitForm('/Booking/DetailBooking')">Detaylar</button>
                                         <a href="/Admin/Booking/DeleteBooking/@item.BookingID" class="btn mb-1 btn-rounded btn-danger">Sil</a>
                                         <a href="/Admin/Booking/UpdateBooking/@item.BookingID" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
                                     </td>
@@ -75,3 +74,17 @@
         </div>
     </div>
 </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" ></script>
+<script>
+    function submitForm(action) {
+        $.ajax({
+            url: action,
+            method: 'POST',
+            success: function (data) {
+                location.reload();
+            },
+            error: function (error) {
+            }
+        });
+    }
+</script>

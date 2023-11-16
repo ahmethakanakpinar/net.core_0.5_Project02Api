@@ -9,5 +9,6 @@ namespace HotelProject.DataAccessLayer.Abstrack
 {
     public interface IBookingDal : IGenericDal<Booking>
     {
+        public void ApproveBookingUpdate(int id);
     }
 }

@@ -88,7 +88,19 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             }
             return View();
         }
-     
+        public async Task<IActionResult> ApproveBooking(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"https://localhost:7113/api/Booking/ApproveBooking?id={id}");
+            if(responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index","Booking");
+            }
+            return View();
+         
+        }
+
+
     }
 }
 

@@ -9,5 +9,6 @@ namespace HotelProject.BusinessLayer.Abstrack
 {
     public interface IBookingService : IGenericService<Booking>
     {
+        public void TApproveBookingUpdate(int id);
     }
 }
