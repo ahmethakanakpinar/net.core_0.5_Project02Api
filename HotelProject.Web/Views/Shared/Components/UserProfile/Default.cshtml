@@ -1,0 +1,52 @@
+﻿@model ResultProfileDto
+@{
+    var phone = (Model.PhoneNumber == null) ? "Girilmedi" : Model.PhoneNumber;
+}
+<div class="col-lg-4 col-xl-3">
+    <div class="card">
+        <div class="card-body">
+            <div class="media align-items-center mb-4">
+                <img class="mr-3 rounded-circle" src="@Model.ImageUrl" width="80" height="80" alt="">
+                <div class="media-body">
+                    <h3 class="mb-0">@Model.Name @Model.Surname</h3>
+                    <p class="text-muted mb-0">@Model.UserName</p>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col">
+                    <div class="card card-profile text-center">
+                        <span class="mb-1 text-primary"><i class="icon-people"></i></span>
+                        <h3 class="mb-0">263</h3>
+                        <p class="text-muted px-4">Takip Eden</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card card-profile text-center">
+                        <span class="mb-1 text-warning"><i class="icon-user-follow"></i></span>
+                        <h3 class="mb-0">263</h3>
+                        <p class="text-muted">Takip Ettiğin</p>
+                    </div>
+                </div>
+               @*  <div class="col-12 text-center">
+                    <button class="btn btn-danger px-5">Admin</button>
+                </div> *@
+            </div>
+
+            <h4>Hakkımda</h4>
+            <ul class="card-profile__info">
+                <li class="mb-1"><strong class="text-dark mr-4">Telefon</strong> <span>@phone</span></li>
+                <li><strong class="text-dark mr-4">Email</strong> <span>@Model.Email</span></li>
+            </ul>
+            <form method="post" asp-action="DeleteMyAccount" asp-controller="User" onsubmit="return confirmDelete()">
+                <button type="submit" class="btn btn-primary">Hesabımı Güvenli bir şekilde sil</button>
+            </form>
+            <script>
+                function confirmDelete() {
+                    var result = confirm("Hesabınızı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz!");
+                    return result; // Eğer kullanıcı OK'ye tıklarsa form submit edilir, aksi takdirde submit işlemi engellenir.
+                }
+            </script>
+        </div>
+    </div>
+</div>
