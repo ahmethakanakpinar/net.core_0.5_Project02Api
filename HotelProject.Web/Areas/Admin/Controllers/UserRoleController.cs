@@ -60,5 +60,15 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             }
             return View();
         }
+        public async Task<IActionResult> DeleteUserRole(int id)
+        {
+            var user = _roleService.TGetById(id);
+            var result = await _roleManager.DeleteAsync(user);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "UserRole");
+            }
+            return View();
+        }
     }
 }
