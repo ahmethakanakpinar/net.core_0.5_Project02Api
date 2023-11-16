@@ -66,25 +66,30 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         }
         public async Task<IActionResult> DeleteUserRole(int id)
         {
-            var usersInRole = _userService.TGetAppUserSameAppRole(id);
-            var UserRoleList = _mapper.Map<List<UpdateUserSameUserRoleDto>>(usersInRole);
-
-            foreach (var user in UserRoleList)
-            {
-                var getuser = _userService.TGetById(user.Id);
-                getuser.AppRoleId = 2;
-
-                var updateResult = await _userManager.UpdateAsync(getuser);
-               
-            }
             var roleToDelete = _roleService.TGetById(id);
-
-            var result = await _roleManager.DeleteAsync(roleToDelete);
-            if (result.Succeeded)
+            if (!(roleToDelete.Id == 1 || roleToDelete.Id == 2))
             {
-                return RedirectToAction("Index", "UserRole");
+                var usersInRole = _userService.TGetAppUserSameAppRole(id);
+                var UserRoleList = _mapper.Map<List<UpdateUserSameUserRoleDto>>(usersInRole);
+
+                foreach (var user in UserRoleList)
+                {
+                    var getuser = _userService.TGetById(user.Id);
+                    getuser.AppRoleId = 2;
+
+                    var updateResult = await _userManager.UpdateAsync(getuser);
+               
+                }
+     
+
+                var result = await _roleManager.DeleteAsync(roleToDelete);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "UserRole");
+                }
+
             }
-            return View();
+            return RedirectToAction("Index", "UserRole");
         }
     }
 }

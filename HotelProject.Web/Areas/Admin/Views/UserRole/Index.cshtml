@@ -26,7 +26,14 @@
                                     <th>@item.Id</th>
                                     <td>@item.Name</td>
                                     <td>
-                                        <a href="/Admin/UserRole/DeleteUserRole/@item.Id" class="btn mb-1 btn-rounded btn-danger">Sil</a>
+                                        @if (!(item.Id == 1 || item.Id == 2 || item.Id == 8))
+                                        {
+                                            <a href="/Admin/UserRole/DeleteUserRole/@item.Id" class="btn mb-1 btn-rounded btn-danger">Sil</a>
+                                        }
+                                        else
+                                        {
+                                            <span class="label gradient-5 rounded">Silinemez</span>
+                                        }
                                     </td>
                                 </tr>
                             }
