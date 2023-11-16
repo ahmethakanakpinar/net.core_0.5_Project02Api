@@ -49,13 +49,13 @@
                                         <span class="label gradient-5 rounded">@phone</span>
                                     </td>
                                     <td>
-                                        <a href="/Admin/User/DeleteUser/@item.Id" class="btn mb-1 btn-rounded btn-danger">Sil</a>
                                         @if (userId == item.Id.ToString())
                                         {
                                             <a href="/Admin/Login/Profile/@item.Id" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
                                         }
                                         else
                                         {
+                                            <a href="/Admin/User/DeleteUser/@item.Id" class="btn mb-1 btn-rounded btn-danger">Sil</a>
                                             <a href="/Admin/User/UpdateUser/@item.Id" class="btn mb-1 btn-rounded btn-dark">Düzenle</a>
                                         }
                                     </td>
