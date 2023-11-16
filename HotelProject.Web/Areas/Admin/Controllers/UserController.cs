@@ -204,5 +204,19 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             }
             return View();
         }
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            var me = await _userManager.FindByNameAsync(User.Identity.Name);
+            var user = _appUserService.TGetById(id);
+            if(user.Id != me.Id)
+            {
+                var result = await _userManager.DeleteAsync(user);
+                if(result.Succeeded)
+                {
+                    return RedirectToAction("Index", "User");
+                }
+            }
+            return RedirectToAction("Index", "User");
+        }
     }
 }
