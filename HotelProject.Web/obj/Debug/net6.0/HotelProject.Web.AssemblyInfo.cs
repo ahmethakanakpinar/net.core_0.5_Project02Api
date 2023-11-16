@@ -15,10 +15,14 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cff58a484154ea0aec68c3801fd63ae4c61e7f6")]
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72d9ee106a1d25fd8176097c0dadc465d3629f21")]
 >>>>>>> 8c2876a (Default Testimonial sayfası yapıldı)
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c2876a39f1dd24fc0fd19edeb0a72ff6e3a8fe8")]
+>>>>>>> 8e23997 (PageHeaderPartial oluşturuldu Bazı sayfalara eklendi)
 [assembly: System.Reflection.AssemblyProductAttribute("HotelProject.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HotelProject.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
