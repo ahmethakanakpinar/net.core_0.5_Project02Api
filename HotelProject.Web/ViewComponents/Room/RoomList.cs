@@ -13,15 +13,24 @@ namespace HotelProject.Web.ViewComponents.Room
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(int listAll = 0)
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7113/api/Room");
             if(responseMessage.IsSuccessStatusCode)
             {
+
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultRoomDto>>(jsonData).Take(3).ToList();
-                return View(values);
+                if(listAll != 0)
+                {
+                    var values = JsonConvert.DeserializeObject<List<ResultRoomDto>>(jsonData).Take(listAll).ToList();
+                    return View(values);
+                }
+                else
+                {
+                    var values = JsonConvert.DeserializeObject<List<ResultRoomDto>>(jsonData).ToList();
+                    return View(values);
+                }
             }
             return View();
         }

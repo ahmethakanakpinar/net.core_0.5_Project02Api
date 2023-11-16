@@ -51,7 +51,7 @@
 @await Component.InvokeAsync("AboutList")
 <!-- About End -->
 <!-- Room Start -->
-@await Component.InvokeAsync("RoomList")
+@await Component.InvokeAsync("RoomList", new { listAll = 3 })
 
 <!-- Room End -->
 <!-- Video Start -->
