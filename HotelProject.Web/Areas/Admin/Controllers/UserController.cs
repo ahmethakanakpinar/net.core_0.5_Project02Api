@@ -7,6 +7,7 @@ using HotelProject.Web.Dtos.RegisterDto;
 using HotelProject.Web.Dtos.StaffDto;
 using HotelProject.Web.Dtos.UserDto;
 using HotelProject.Web.Dtos.UserRoleDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -16,6 +17,7 @@ using System.Linq;
 
 namespace HotelProject.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     [Route("Admin/[controller]/[action]/{id?}")]
     public class UserController : Controller

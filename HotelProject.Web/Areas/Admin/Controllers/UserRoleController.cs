@@ -3,11 +3,13 @@ using HotelProject.BusinessLayer.Abstrack;
 using HotelProject.EntityLayer;
 using HotelProject.Web.Dtos.UserDto;
 using HotelProject.Web.Dtos.UserRoleDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelProject.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     [Route("/Admin/[controller]/[action]/{id?}")]
     public class UserRoleController : Controller

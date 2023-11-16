@@ -1,9 +1,11 @@
 ﻿using HotelProject.Web.Dtos.ContactCategoryDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace HotelProject.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     [Route("/Admin/[controller]/[action]/{id?}")]
     public class ContactCategoryController : Controller
