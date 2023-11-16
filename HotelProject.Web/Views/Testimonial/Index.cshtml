@@ -3,10 +3,14 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<<<<<<< HEAD
 @{
     ViewBag.Title = "Referanslar";
 }
 @await Html.PartialAsync("PageHeaderPartial")
+=======
+
+>>>>>>> 8c2876a (Default Testimonial sayfası yapıldı)
 @await Component.InvokeAsync("TestimonialList", new { listAll = 0 }))
 @await Html.PartialAsync("SubscribePartial");
 
