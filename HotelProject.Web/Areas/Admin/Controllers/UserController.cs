@@ -218,5 +218,11 @@ namespace HotelProject.Web.Areas.Admin.Controllers
             }
             return RedirectToAction("Index", "User");
         }
+        public async Task<IActionResult> DeleteMyAccount()
+        {
+            var me = await _userManager.FindByNameAsync(User.Identity.Name);
+            await _userManager.DeleteAsync(me);
+            return Redirect("/Login/Index");
+        }
     }
 }

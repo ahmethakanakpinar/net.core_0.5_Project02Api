@@ -103,6 +103,16 @@
                             </div>
                         </div>
                     </form>
+                    <form method="post" asp-action="DeleteMyAccount" asp-controller="User" onsubmit="return confirmDelete()">
+                        <button type="submit" class="btn btn-primary">Hesabımı Güvenli bir şekilde sil</button>
+                    </form>
+
+                    <script>
+                        function confirmDelete() {
+                            var result = confirm("Hesabınızı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz!");
+                            return result; // Eğer kullanıcı OK'ye tıklarsa form submit edilir, aksi takdirde submit işlemi engellenir.
+                        }
+                    </script>
                 </div>
             </div>
         </div>
