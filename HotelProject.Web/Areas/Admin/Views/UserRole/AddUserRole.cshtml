@@ -11,11 +11,16 @@
                 <div class="form-validation">
                     <form class="form-valide" method="post">
                         <div class="form-group row">
-                            <label class="col-lg-4 col-form-label" for="Title">
-                                Kullanıcı Rol Adı <span asp-validation-for="Name" class="text-danger">*</span>
+                            <label class="col-lg-4 col-form-label" for="Name">
+                                Kullanıcı Rol Adı <span asp-validation-for="RoleName" class="text-danger">*</span>
                             </label>
                             <div class="col-lg-6">
-                                <input type="text" class="form-control" id="Name" name="Name" placeholder="Kullanıcı Rolünün Adını Giriniz">
+                                <input type="text" class="form-control" id="Name" asp-for="RoleName" placeholder="Kullanıcı Rolünün Adını Giriniz">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-8 ml-auto">
+                                <button type="submit" class="btn btn-primary">Ekle</button>
                             </div>
                         </div>
                     </form>
