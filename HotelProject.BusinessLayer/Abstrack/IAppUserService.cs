@@ -10,5 +10,6 @@ namespace HotelProject.BusinessLayer.Abstrack
     public interface IAppUserService : IGenericService<AppUser>
     {
         public List<AppUser> TGetAppRole();
+        public List<AppUser> TGetAppUserSameAppRole(int id);
     }
 }

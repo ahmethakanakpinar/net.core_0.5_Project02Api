@@ -13,12 +13,16 @@ namespace HotelProject.Web.Areas.Admin.Controllers
     public class UserRoleController : Controller
     {
         private readonly IAppRoleService _roleService;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IAppUserService _userService;
         private readonly IMapper _mapper;
         private readonly RoleManager<AppRole> _roleManager;
 
-        public UserRoleController(IAppRoleService roleService, IMapper mapper, RoleManager<AppRole> roleManager)
+        public UserRoleController(IAppRoleService roleService, UserManager<AppUser> userManager, IAppUserService userService, IMapper mapper, RoleManager<AppRole> roleManager)
         {
             _roleService = roleService;
+            _userManager = userManager;
+            _userService = userService;
             _mapper = mapper;
             _roleManager = roleManager;
         }
@@ -62,8 +66,20 @@ namespace HotelProject.Web.Areas.Admin.Controllers
         }
         public async Task<IActionResult> DeleteUserRole(int id)
         {
-            var user = _roleService.TGetById(id);
-            var result = await _roleManager.DeleteAsync(user);
+            var usersInRole = _userService.TGetAppUserSameAppRole(id);
+            var UserRoleList = _mapper.Map<List<UpdateUserSameUserRoleDto>>(usersInRole);
+
+            foreach (var user in UserRoleList)
+            {
+                var getuser = _userService.TGetById(user.Id);
+                getuser.AppRoleId = 2;
+
+                var updateResult = await _userManager.UpdateAsync(getuser);
+               
+            }
+            var roleToDelete = _roleService.TGetById(id);
+
+            var result = await _roleManager.DeleteAsync(roleToDelete);
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "UserRole");

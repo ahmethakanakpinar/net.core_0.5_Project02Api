@@ -23,5 +23,14 @@ namespace HotelProject.DataAccessLayer.EntityFramework
             return context.Users.OfType<AppUser>().Include(c => c.AppRole).ToList();
             //return context.Users.Include(c => c.AppRole).ToList();
         }
+
+        public List<AppUser> GetAppUserSameAppRole(int id)
+        {
+            using (var context = new Context())
+            {
+                var usersInRole = context.Users.OfType<AppUser>().Where(c => c.AppRoleId == id).ToList();
+                return usersInRole;
+            }
+        }
     }
 }

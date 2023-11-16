@@ -28,6 +28,11 @@ namespace HotelProject.BusinessLayer.Concrete
             return _appUserDal.GetAppRole();
         }
 
+        public List<AppUser> TGetAppUserSameAppRole(int id)
+        {
+            return _appUserDal.GetAppUserSameAppRole(id);
+        }
+
         public AppUser TGetById(int id)
         {
             return _appUserDal.GetByID(id);
