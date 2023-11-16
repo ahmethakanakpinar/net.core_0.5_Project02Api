@@ -5,4 +5,3 @@ Yapılacaklar <br>
 Siteye Odalar, Hizmetler Sayfaları eklenecek <br>
 Admin Dashboard düzenlenecek <br> 
 Admin Rezervasyon kısmında rezervasyonları onaylama, bekletme, iptal etme kısımları yazılacak <br>
-Admin Profile sayfası yeni tasarım ile yenilecek <br>
