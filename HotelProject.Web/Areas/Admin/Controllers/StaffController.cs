@@ -1,5 +1,6 @@
 ﻿using HotelProject.Web.Dtos.StaffDto;
 using HotelProject.Web.Models.Staff;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
