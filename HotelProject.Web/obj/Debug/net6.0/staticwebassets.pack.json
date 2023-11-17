@@ -21701,8 +21701,8 @@
       "PackagePath": "staticwebassets\\userimage\\d9fc5faf-b535-4876-bf0a-3ce505506605.jpg"
     },
     {
-      "Id": "C:\\Users\\Hakan\\OneDrive - Tora\\Documents\\Visual Studio 2022\\asp-net-core\\Core_Proje2Api\\HotelProject.Web\\wwwroot\\userimage\\pic-1.png",
-      "PackagePath": "staticwebassets\\userimage\\pic-1.png"
+      "Id": "C:\\Users\\Hakan\\OneDrive - Tora\\Documents\\Visual Studio 2022\\asp-net-core\\Core_Proje2Api\\HotelProject.Web\\wwwroot\\userimage\\default.png",
+      "PackagePath": "staticwebassets\\userimage\\default.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.HotelProject.Web.Microsoft.AspNetCore.StaticWebAssets.props",

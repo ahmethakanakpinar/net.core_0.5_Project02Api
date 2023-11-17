@@ -28,7 +28,7 @@ namespace HotelProject.Web.ViewComponents.Room
                 }
                 else
                 {
-                    var values = JsonConvert.DeserializeObject<List<ResultRoomDto>>(jsonData).ToList();
+                    var values = JsonConvert.DeserializeObject<List<ResultRoomDto>>(jsonData);
                     return View(values);
                 }
             }

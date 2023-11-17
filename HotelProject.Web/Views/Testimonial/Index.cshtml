@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Referanslar";
+}
+@await Html.PartialAsync("PageHeaderPartial")
+@await Component.InvokeAsync("TestimonialList", new { listAll = 0 }))
+@await Html.PartialAsync("SubscribePartial");
+

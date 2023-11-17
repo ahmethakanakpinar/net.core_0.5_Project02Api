@@ -58,13 +58,13 @@
 @await Component.InvokeAsync("TrailerList")
 <!-- Video Start -->
 <!-- Service Start -->
-@await Component.InvokeAsync("ServiceList")
+@await Component.InvokeAsync("ServiceList", new { listAll = 6 }))
 <!-- Service End -->
 <!-- Testimonial Start -->
-@await Component.InvokeAsync("TestimonialList")
+@await Component.InvokeAsync("TestimonialList", new { listAll = 3 })
 <!-- Testimonial End -->
 <!-- Team Start -->
-@await Component.InvokeAsync("StaffList")
+@await Component.InvokeAsync("StaffList", new { listAll = 4 })
 <!-- Team End -->
 <!-- Newsletter Start -->
 @await Html.PartialAsync("SubscribePartial");

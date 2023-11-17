@@ -5,6 +5,10 @@
 
 
 <!-- Room Start -->
+    @{
+        ViewBag.Title = "Odalar";
+    }
+    @await Html.PartialAsync("PageHeaderPartial")
     @await Component.InvokeAsync("RoomList", new { listAll = 0 })
     @await Html.PartialAsync("SubscribePartial");
 
